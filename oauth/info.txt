@@ -1,0 +1,22 @@
+You will need to set environment variables for facebook auth:
+        rhc set-env FACEBOOK_ID=id -a pickyouapp
+        rhc set-env FACEBOOK_SECRET=secret -a pickyouapp
+
+You will need to set environment variables for google auth:
+        rhc set-env GOOGLE_ID=id -a pickyouapp
+        rhc set-env GOOGLE_SECRET=secret -a pickyouapp
+
+You will need to set environment variables for twitter auth:
+        rhc set-env TWITTER_ID=id -a pickyouapp
+        rhc set-env TWITTER_SECRET=secret -a pickyouapp
+
+
+Your app should now be live at
+        http://pickyouapp-nosolojava.rhcloud.com/~com
+
+You may need to address the issues mentioned above and restart the server for the app to work correctly
+        rhc app-restart -a pickyouapp
+After app modification run
+        grunt build
+Then deploy with
+        grunt buildcontrol:openshift
